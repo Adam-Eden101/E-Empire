@@ -1,13 +1,6 @@
 const express = require('express');
 const app = express();
-const students = require('./src/routes/students')(app);
-
-const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize('database', 'username', 'password', {
-    host: 'localhost',
-    dialect: 'mysql'
-});
-  
+const users = require('./src/routes/users.route')(app);
 
 app.get('/', (req, res) => {
     res.json({"message" : 'Bonjour'});
