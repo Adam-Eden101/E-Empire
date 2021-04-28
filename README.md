@@ -25,11 +25,11 @@ Ils peuvent également former des alliances ensemble et s'entraider dans leurs c
 
 ### Git
 
-- 
+- https://github.com/Cameron-Carra/E-Empire
 
 ### Trello
 
-- https://trello.com/b/pY1Qcvze/e-empire
+- https://trello.com/b/6eC44B74/e-empire
 
 ### To-do list
 
@@ -44,4 +44,3 @@ Ils peuvent également former des alliances ensemble et s'entraider dans leurs c
     - Mettre en place la base de données et les migrations (Sequelize)
     - Début de mockup
     - Début de back
-    
