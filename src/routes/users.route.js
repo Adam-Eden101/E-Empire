@@ -5,11 +5,9 @@ module.exports = app => {
 
     router.get('/', userController.findAll);
 
-    router.post('/', (req, res) => {
-        res.json({"message" : 'Création d\'utilisateur'});
-    });
-
-    router.get('/:id', userController.findByID);
+    router.get('/:id', userController.findById);
+    
+    router.post('/', userController.create);
 
     router.put('/:id', (req, res) => {
         res.json({"message" : 'Modif user d\'id ' + req.params.id});
