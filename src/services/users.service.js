@@ -13,7 +13,6 @@ async function findById(id) {
 }
 
 async function create(user) {
-    console.log(user);
     try {
         const newUser = await User.create(user)
         return (newUser);
@@ -22,12 +21,14 @@ async function create(user) {
     }
 }
 
-async function update(id, user) {
-
+async function update(newUser) {
+    const modifiedUser = await newUser.save();
+    return (modifiedUser);
 }
 
-async function remove(id) {
-
+async function remove(user) {
+    const deletedUser = await user.destroy();
+    return (deletedUser);
 }
 
 module.exports = {

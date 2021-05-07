@@ -2,12 +2,16 @@ const userService = require('../services/users.service')
 
 async function findAll(req, res) {
     const users = await userService.findAll();
-    res.json(users);
+    res.status(200).json(users);
 }
 
 async function findById(req, res) {
     const user = await userService.findById(req.params.id);
-    res.json(user);
+    if (user != null) {
+        res.status(200).json(user);
+    } else {
+        res.status(404).json({"message" : "User not found" });
+    }
 }
 
 async function create(req, res) {
@@ -35,8 +39,30 @@ async function create(req, res) {
     }
 }
 
+async function update(req, res) {
+    console.log(req.body);
+
+    const user = await userService.findById(req.params.id)
+    const userData = req.query;
+
+    if (userData.username) {
+        user.username = userData.username;
+    }
+
+    const modifiedUser = await userService.update(user);
+    res.status(200).json(modifiedUser);
+}
+
+async function remove(req, res) {
+    const user = await userService.findById(req.params.id);
+    const deletedUser = await userService.remove(user);
+    res.status(204).json(deletedUser);
+}
+
 module.exports = {
     findAll,
     findById,
-    create
+    create,
+    update,
+    remove
 }
