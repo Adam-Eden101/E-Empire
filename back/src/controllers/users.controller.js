@@ -16,8 +16,6 @@ async function findById(req, res) {
 
 async function create(req, res) {
     const user = req.query;
-    user.score = 0;
-    user.level = 1;
 
     const createdUser = await userService.create(user);
     if (await userService.findById(createdUser.id) != null) {

@@ -46,11 +46,13 @@ const User = sequelize.define('User', {
     },
     level: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 1
     },
     score: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 0
     }
 }, {
     tableName: 'user'
