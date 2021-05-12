@@ -1,10 +1,11 @@
 {
-  "name": "eempire",
+  "name": "eempire_api",
   "version": "1.0.0",
   "description": "eEMP est un jeu MMO de gestion et de stratégie militaire basée sur de la prise de territoire",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mariadb": "^2.5.3",
     "nodemon": "^2.0.7",
